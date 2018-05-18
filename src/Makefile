@@ -1,2 +1,2 @@
 all:
-	cd tsp && javac *.java && cd ..
+	javac tsp/*.java -d build

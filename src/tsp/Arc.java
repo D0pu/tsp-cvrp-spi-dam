@@ -24,6 +24,7 @@ class Arc {
 	}
 
 	public String toString() {
-		return "(" + source + "," + target + ") : " + value;
+		return "(" + source + "," + target + ")";
 	}
+
 }
