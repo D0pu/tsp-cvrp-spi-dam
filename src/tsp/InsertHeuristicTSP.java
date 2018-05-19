@@ -50,7 +50,6 @@ public class InsertHeuristicTSP implements HeuristicTSP {
 
 		for (int i = 0; i < matrix.length; i++) {
 			double currentValue = computeSolutionFromCity(matrix, tmpSolution, i);
-			System.out.println(i + " : " + currentValue + " -> "+ tmpSolution);
 			if (currentValue < value) {
 				value = currentValue;
 				solution = tmpSolution;
@@ -58,7 +57,6 @@ public class InsertHeuristicTSP implements HeuristicTSP {
 			tmpSolution = new ArrayList<Integer>();
 		}
 
-		System.out.println("\nLA SOLUTION EST : " + solution + "\n");
 
 		return value;
 	}
