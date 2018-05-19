@@ -30,6 +30,7 @@ public class DecreasingArcHeuristicTSP implements HeuristicTSP {
             Arc currentArc = sortedArcs.get(0);
             if(!createsCircuit(arcSolution, currentArc) || arcSolution.size() >= n - 1){
                 removeStartingFromGoingTo(sortedArcs, currentArc.getSource(), currentArc.getTarget());
+                //note : also remove currentArc from sorted Arcs
                 arcSolution.add(currentArc);
                 value += currentArc.getValue();
             }
