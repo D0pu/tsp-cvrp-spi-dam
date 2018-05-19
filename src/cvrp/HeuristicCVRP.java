@@ -14,6 +14,6 @@ public interface HeuristicCVRP{
 	 * @param solution an empty list that will be filled with the solution for each vehicule.
 	 * @return the value of the solution found
 	 */
-    double computeSolution(double[][] matrix, int[] demands, int capacity, List<Integer> solution);
+    double computeSolution(double[][] matrix, int[] demands, int capacity, List<List<Integer>> solution);
 
 }

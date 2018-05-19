@@ -81,7 +81,7 @@ public class TestCVRP {
 		List<Double> listValues = new ArrayList<Double>();
 
 		for (File f : fileList) {
-			List<Integer> soluce = new ArrayList<Integer>();
+			List<List<Integer>> soluce = new ArrayList<List<Integer>>();
 			VRPinstance data = null;
 			try {
 				data = new VRPinstance(f);
