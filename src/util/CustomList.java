@@ -44,6 +44,19 @@ public class CustomList<T> {
 		}
 	}
 
+  public void addHead(T element){
+    Link<T> newLink = new Link<T>(element);
+		// first element
+		if(first == null){
+			first = newLink;
+			last = newLink;
+		}
+		else{ // general case
+			newLink.next = first;
+			first = newLink;
+		}
+  }
+
 
 	/**
 	 *
