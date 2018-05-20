@@ -1,6 +1,7 @@
 package cvrp;
 import java.util.List;
 import java.util.ArrayList;
+import util.CustomList;
 
 /**
 *
@@ -10,7 +11,7 @@ import java.util.ArrayList;
 */
 
 public class GiantTourHeuristicCVRP implements HeuristicCVRP {
-	public double computeSolution(double[][] matrix, int[] demands, int capacity, List<List<Integer>> solution){
+	public double computeSolution(double[][] matrix, int[] demands, int capacity, List<Tour> solution){
     System.out.println("Hello world Giant Tour");
     return 0.0;
   }

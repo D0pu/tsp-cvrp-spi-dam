@@ -3,6 +3,7 @@ package cvrp;
 import java.util.List;
 import java.util.ArrayList;
 import java.io.File;
+import util.CustomList;
 
 
 /**
@@ -81,7 +82,7 @@ public class TestCVRP {
 		List<Double> listValues = new ArrayList<Double>();
 
 		for (File f : fileList) {
-			List<List<Integer>> soluce = new ArrayList<List<Integer>>();
+			List<Tour> soluce = new ArrayList<Tour>();
 			VRPinstance data = null;
 			try {
 				data = new VRPinstance(f);

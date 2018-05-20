@@ -62,10 +62,15 @@ public class VRPinstance {
 
 		scan.close();
 
-		// for(int i=0;i<size;i++){
-		// System.out.print(x[i] + " " );
-		// System.out.println(y[i] + " " );
-		// }
+		for(int i=0;i<size;i++){
+		System.out.print(x[i] + " " );
+		System.out.println(y[i] + " " );
+		}
+
+    // System.out.println(x[0]);
+    // System.out.println(y[0]);
+    // System.out.println(x[1]);
+    // System.out.println(y[1]);
 
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < size; j++) {
