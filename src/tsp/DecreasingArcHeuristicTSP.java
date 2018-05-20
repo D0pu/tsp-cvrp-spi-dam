@@ -57,6 +57,7 @@ public class DecreasingArcHeuristicTSP implements HeuristicTSP {
         }
 
         System.out.println(solution);
+        System.out.println(value);
 
         return value;
     }

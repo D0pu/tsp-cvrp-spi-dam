@@ -95,4 +95,12 @@ public class TestCVRP {
 
 		return listValues;
 	}
+
+  public static double avgVal(List<Double> results) {
+		double avg = 0.0;
+		for (double ele : results) {
+			avg += ele;
+		}
+		return avg / (double) results.size();
+	}
 }

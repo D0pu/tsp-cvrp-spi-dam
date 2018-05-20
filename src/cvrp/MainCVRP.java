@@ -36,10 +36,15 @@ public class MainCVRP {
 		switch(stringtoCode(args[0])){
 		case 'h' : // heuristic
 			listRes = tt.testHeuristic(new CandWHeuristicCVRP());
-
+      System.out.println("Clarke and Wright heuristic : "
+                         + TestCVRP.avgVal(listRes)
+                         + " on average");
 			break;
 		case 'H' : // heuristic
 			listRes = tt.testHeuristic(new GiantTourHeuristicCVRP());
+      System.out.println("Giant Tour heuristic : "
+                         + TestCVRP.avgVal(listRes)
+                         + " on average");
 			break;
 		default :  // error
 			System.out.println("Argument Error\nSyntax : TestTSP -{h1,h2,e,l} instanceName timeLimit");

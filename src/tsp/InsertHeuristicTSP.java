@@ -10,7 +10,6 @@ import java.util.ArrayList;
 */
 
 public class InsertHeuristicTSP implements HeuristicTSP {
-
 	private double computeSolutionFromCity(double[][] matrix, List<Integer> solution, Integer start) {
 		double value = 0.0;
 
@@ -34,6 +33,8 @@ public class InsertHeuristicTSP implements HeuristicTSP {
 			value += minDistanceClosestNode;
 			currentNode = closestNode;
 		}
+		reOrderSolution(solution);
+
 		if (solution.size() > 1) {
 			value += matrix[solution.get(solution.size()-1)][solution.get(0)];
 			solution.add(solution.get(0));
@@ -47,7 +48,6 @@ public class InsertHeuristicTSP implements HeuristicTSP {
 
 		List<Integer> tmpSolution = new ArrayList<Integer>();
 
-
 		for (int i = 0; i < matrix.length; i++) {
 			double currentValue = computeSolutionFromCity(matrix, tmpSolution, i);
 			if (currentValue < value) {
@@ -57,8 +57,31 @@ public class InsertHeuristicTSP implements HeuristicTSP {
 			tmpSolution = new ArrayList<Integer>();
 		}
 
+    System.out.println(solution);
 
 		return value;
+	}
+
+	private void reOrderSolution(List<Integer> solution){//Starting point has to be node 0
+		List<Integer> tmp = new ArrayList<Integer>();
+		int start = -1;
+
+		for(int i = 0; i < solution.size(); i++){
+			if(solution.get(i) == 0){
+				start = i;
+				break;
+			}
+		}
+
+		if(start != -1){
+			for(int i = 0; i < solution.size(); i++){
+				tmp.add(solution.get((i + start) % solution.size()));
+			}
+			solution.clear();
+			for(int i = 0; i < tmp.size(); i++){
+				solution.add(i, tmp.get(i));
+			}
+		}
 	}
 
 }

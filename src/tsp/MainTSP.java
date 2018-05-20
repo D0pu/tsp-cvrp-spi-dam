@@ -29,6 +29,7 @@ public class MainTSP {
 
 		TestTSP tt = new TestTSP();
 		tt.loadFile(args[1]);
+		// tt.loadFileList(args[1]); // to load entire folder
 
 		List<Double> listRes; // list of results
 
