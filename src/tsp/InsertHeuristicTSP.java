@@ -57,7 +57,8 @@ public class InsertHeuristicTSP implements HeuristicTSP {
 			tmpSolution = new ArrayList<Integer>();
 		}
 
-    System.out.println(solution);
+    System.out.println("Result: " + solution);
+    System.out.println("Total length: " + value);
 
 		return value;
 	}

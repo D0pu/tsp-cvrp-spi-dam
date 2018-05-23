@@ -2,6 +2,7 @@ package cvrp;
 import java.util.List;
 import java.util.ArrayList;
 import util.CustomList;
+import tsp.DecreasingArcHeuristicTSP;
 
 /**
 *

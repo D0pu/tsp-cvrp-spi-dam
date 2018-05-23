@@ -51,6 +51,7 @@ public class CandWHeuristicCVRP implements HeuristicCVRP {
     }
 
     System.out.println(solution);
+    System.out.println("Total length: " + value);
 
     return value;
   }
