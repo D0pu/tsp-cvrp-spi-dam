@@ -10,7 +10,7 @@ import java.util.ArrayList;
 */
 
 public class InsertHeuristicTSP implements HeuristicTSP {
-	private double computeSolutionFromCity(double[][] matrix, List<Integer> solution, Integer start) {
+	public double computeSolutionFromCity(double[][] matrix, List<Integer> solution, Integer start) {
 		double value = 0.0;
 
 		int currentNode = start;

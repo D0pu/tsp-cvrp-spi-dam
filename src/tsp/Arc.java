@@ -1,6 +1,6 @@
 package tsp;
 
-class Arc {
+public class Arc {
 	private int source;
 	private int target;
 	private double value;

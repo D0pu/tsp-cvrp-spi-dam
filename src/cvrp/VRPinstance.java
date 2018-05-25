@@ -1,5 +1,7 @@
 package cvrp;
 
+import tsp.TSPData;
+
 import java.io.File;
 import java.io.FileReader;
 import java.util.Scanner;
@@ -21,7 +23,6 @@ public class VRPinstance {
 	/* Capacity of a vehicle */
 	private int capacity = -1;
 
-	// private String name=null;
 	private int size;
 
 	public VRPinstance(FileReader f) {
@@ -36,7 +37,7 @@ public class VRPinstance {
 		scan.next(); // capacity:
 		capacity = scan.nextInt();
 		scan.nextLine(); // node coord section
-
+		scan.next();
 		matrix = new double[size][];
 		for (int i = 0; i < size; i++) {
 			matrix[i] = new double[size];
@@ -44,16 +45,16 @@ public class VRPinstance {
 
 		double x[] = new double[size];
 		double y[] = new double[size];
-		scan.next();
+		
 		for (int i = 0; i < size; i++) {
-			scan.next();
+			scan.nextInt();
 			x[i] = scan.nextInt();
 			y[i] = scan.nextInt();
 		}
 
 		scan.nextLine(); // demand section
 		scan.nextLine(); // demand section
-
+		
 		demands = new int[size];
 		for (int i = 0; i < size; i++) {
 			scan.nextInt(); // line number
@@ -62,15 +63,6 @@ public class VRPinstance {
 
 		scan.close();
 
-		// for(int i=0;i<size;i++){
-		// System.out.print(x[i] + " " );
-		// System.out.println(y[i] + " " );
-		// }
-
-    // System.out.println(x[0]);
-    // System.out.println(y[0]);
-    // System.out.println(x[1]);
-    // System.out.println(y[1]);
 
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < size; j++) {
@@ -83,7 +75,6 @@ public class VRPinstance {
 				}
 			}
 		}
-
 	}
 
 	public VRPinstance(File f) throws java.io.FileNotFoundException {
@@ -93,10 +84,10 @@ public class VRPinstance {
 	public VRPinstance(String filename) throws java.io.FileNotFoundException {
 		this(new FileReader(filename));
 	}
-
-
-
-
+	
+	
+	
+	
 	/**
 	 * Creates a VRP instance "by hand"
 	 * Data are supposed to be consistent (size, etc.).
@@ -115,7 +106,7 @@ public class VRPinstance {
 
 	/**
 	 * returns the matrix read
-	 *
+	 * 
 	 * @return the matrix
 	 */
 	public double[][] getMatrix() {
@@ -124,7 +115,7 @@ public class VRPinstance {
 
 	/**
 	 * returns the number $n$ of customers (including the depot)
-	 *
+	 * 
 	 * @return N
 	 */
 	public int getN() {
@@ -138,39 +129,11 @@ public class VRPinstance {
 	public int[] getDemands() {
 		return demands;
 	}
-
+	
 	public int getDemand(int customer) {
 		return demands[customer];
 	}
+	
 
-
-	// public static void main(String args[]) {
-	// 	if(args.length < 1){
-  //     System.out.println("Argument Error\nSyntax : VPRinstance instanceName");
-  //     return;
-  //   }
-	//
-	// 	VRPinstance instance = null;
-	// 	try {
-	// 		instance = new VRPinstance(args[0]);
-	// 	} catch (java.io.FileNotFoundException e) {
-	// 		System.out.println("File not found");
-	// 	}
-	//
-	// 	System.out.println("Matrice de distances");
-	// 	double[][] matrix = instance.getMatrix();
-	// 	for (int i = 0; i < instance.getN(); i++) {
-	// 		System.out.print(matrix[i][0] + " ");
-	// 	}
-	// 	System.out.println();
-	//
-	// 	int[] demands = instance.getDemands();
-	// 	System.out.println("Demandes");
-	// 	for(int d : demands) System.out.print(d + " ");
-	// 	System.out.println();
-	//
-	// 	System.out.println("Capacite : " + instance.getCapacity());
-	//
-	// }
 
 }
